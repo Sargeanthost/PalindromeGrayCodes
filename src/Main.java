@@ -6,6 +6,8 @@ public class Main {
         easyInversion();
         System.out.println("Fast inversion");
         fastInversion();
+        System.out.println("Gray codes");
+        grayCodes();
     }
 
     public static void palindrome() {
@@ -39,5 +41,16 @@ public class Main {
         System.out.println("Number of fast inversions: " + fastinversioncount.fastInversion(testSet3));
         System.out.println("Number of fast inversions: " + fastinversioncount.fastInversion(testSet4));
         System.out.println("Number of fast inversions: " + fastinversioncount.fastInversion(testSet5));
+    }
+
+    public static void grayCodes(){
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = 4;
+        System.out.println(a + " bit gray code: " + graycodesarefun.Brgc(a));
+        System.out.println(b + " bit gray code: " + graycodesarefun.Brgc(b));
+        System.out.println(c + " bit gray code: " + graycodesarefun.Brgc(c));
+        System.out.println(d + " bit gray code: " + graycodesarefun.Brgc(d));
     }
 }
