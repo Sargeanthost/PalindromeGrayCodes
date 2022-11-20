@@ -13,15 +13,6 @@ public class fastinversioncount {
     //  M([20,21],[6,7]) => I([20,6]) => 1. Since anything to the right of 20 is greater, we add I(x) * 2, so there
     //  is no need to check 21 for any case.
 
-    /**
-     * Counts the inversions between two ordered arrays.
-     *
-     * @param arr   left array
-     * @param left  pointer to left array elem
-     * @param mid   pointer to right array elem
-     * @param right temp pointer
-     * @return returns inversions
-     */
     private static int merge(int[] arr, int left, int mid, int right) {
         int[] leftA = Arrays.copyOfRange(arr, left, mid + 1);
         int[] rightA = Arrays.copyOfRange(arr, mid + 1, right + 1);
@@ -35,17 +26,19 @@ public class fastinversioncount {
                 arr[k++] = leftA[i++];//ordered
             } else {
                 arr[k++] = rightA[j++];//inversion
-                count += (mid + 1) - (left + i);
+                count += (mid + 1) - (left + i);//short circuit
             }
         }
-        while (i < leftA.length)
+        //remake arr
+        while (i < leftA.length) {
             arr[k++] = leftA[i++];
-        while (j < rightA.length)
+        }
+        while (j < rightA.length) {
             arr[k++] = rightA[j++];
+        }
         return count;
     }
 
-    //recursive function. base case when there is only one number left
     private static int fastInversion(int[] arr, int left, int right) {
         int count = 0;
 
@@ -61,8 +54,14 @@ public class fastinversioncount {
         return count;
     }
 
+    /**
+     * Counts the inversions between two ordered arrays.
+     *
+     * @param arr array
+     * @return returns inversions in the array
+     */
     public static int fastInversion(int[] arr) {
-        //arr, temp array for merge, index of first elem, index of last elem
+        //arr, index of first elem, index of last elem
         return fastInversion(arr, 0, arr.length - 1);
     }
 }

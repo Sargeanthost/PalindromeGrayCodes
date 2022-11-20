@@ -37,7 +37,7 @@ public class graycodesarefun {
         for (int i = 0; i < codes.size() - 1; i++) {
             // size - 1 because ascending pair for last .get(size-1) elem is .get(size), which is out of bounds
             int temp = i;
-            int xor = (int) Integer.parseInt(codes.get(i), 2) ^ (int) Integer.parseInt(codes.get(++temp), 2);
+            int xor = Integer.parseInt(codes.get(i), 2) ^ Integer.parseInt(codes.get(++temp), 2);
             switch (xor) {
                 //powers of 2.
                 case 1 -> names.add("Alice");
@@ -47,7 +47,8 @@ public class graycodesarefun {
                 default -> names.add("ERROR");
             }
         }
-
         return names;
     }
+    //we have seen this in binary trees. the ABACABA fractal pattern is recursive, so it would be trivial to add Eve,
+    // felix etc by simply adding one more bit length and adding one more switch case to account for that.
 }

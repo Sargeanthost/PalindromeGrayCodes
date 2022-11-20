@@ -2,6 +2,7 @@ public class palindromecheck {
 
     /**
      * Returns whether {@code str} is a palindrome. Ignores special characters and spaces. O(n)
+     *
      * @param str the string to check
      * @return returns whether {@code str} is a palindrome
      */

@@ -30,7 +30,7 @@ public class Main {
         System.out.println("Number of slow inversions: " + easyinversioncount.easyInversion(testSet5));
     }
 
-    public static void fastInversion(){
+    public static void fastInversion() {
         int[] testSet = {3, 2, 1};
         int[] testSet2 = {1, 2, 3};
         int[] testSet3 = {1, 3, 2};
@@ -43,7 +43,7 @@ public class Main {
         System.out.println("Number of fast inversions: " + fastinversioncount.fastInversion(testSet5));
     }
 
-    public static void grayCodes(){
+    public static void grayCodes() {
         int a = 1;
         int b = 2;
         int c = 3;
