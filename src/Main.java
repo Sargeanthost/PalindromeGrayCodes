@@ -52,5 +52,6 @@ public class Main {
         System.out.println(b + " bit gray code: " + graycodesarefun.Brgc(b));
         System.out.println(c + " bit gray code: " + graycodesarefun.Brgc(c));
         System.out.println(d + " bit gray code: " + graycodesarefun.Brgc(d));
+        System.out.println("Name changes: " + graycodesarefun.names());
     }
 }
