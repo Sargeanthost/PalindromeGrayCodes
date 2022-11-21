@@ -12,11 +12,9 @@ public class palindromecheck {
     }
 
     private static boolean realChecker(String str) {
-        //Base case
         if (str.length() <= 1) {
             return true;
         }
-        //If the ends aren't equal, not a palindrome. If we get to no char or one char left, it's a palindrome.
         if (str.charAt(0) != (str.charAt(str.length() - 1))) {
             return false;
         }
