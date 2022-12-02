@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Palindromes");
@@ -8,6 +10,8 @@ public class Main {
         fastInversion();
         System.out.println("Gray codes");
         grayCodes();
+        System.out.println("Entering palindrome check loop:");
+        palindromeLoop();
     }
 
     public static void palindrome() {
@@ -15,6 +19,7 @@ public class Main {
         System.out.println(palindromecheck.palindromeCheck("never odd or even")); //true
         System.out.println(palindromecheck.palindromeCheck("Able was I ere I saw Elba.")); //true
         System.out.println(palindromecheck.palindromeCheck("A man, a plan, a canal: Panama!")); //true
+        System.out.println(palindromecheck.palindromeCheck("abacabaD ?!abacaba")); //true
     }
 
     public static void easyInversion() {
@@ -48,11 +53,25 @@ public class Main {
         int b = 2;
         int c = 3;
         int d = 4;
+        int e = 5;
         System.out.println(a + " bit gray code: " + graycodesarefun.Brgc(a));
         System.out.println(b + " bit gray code: " + graycodesarefun.Brgc(b));
         System.out.println(c + " bit gray code: " + graycodesarefun.Brgc(c));
         System.out.println(d + " bit gray code: " + graycodesarefun.Brgc(d));
+        System.out.println(e + " bit gray code: " + graycodesarefun.Brgc(e));
         System.out.println("Name changes:");
         System.out.printf(graycodesarefun.picnic());
+    }
+
+    public static void palindromeLoop() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a string to check. Type \"exit\" to exit.");
+            String str = sc.nextLine();
+            if (str.equals("exit")) {
+                break;
+            }
+            System.out.println("Is " + str + " a palindrome: " + palindromecheck.palindromeCheck(str));
+        }
     }
 }

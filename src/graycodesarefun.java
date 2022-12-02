@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 public class graycodesarefun {
     /**
      * Generates Binary reflected gray codes of length {@code nBits}. One-one Java impl of book pseudocode.
@@ -28,6 +27,7 @@ public class graycodesarefun {
         return codes;
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static List<String> names(int n) {
         //The name to add is the position of change indexed in the ABACABADABACABA... (names give a hint: alice, bob,
         // chris, dylan.) This is the xor of sequential elements
@@ -59,7 +59,8 @@ public class graycodesarefun {
         final String OUT = " out";
 
         for (String curWord : code) {
-            if (Collections.frequency(operations, curWord + IN) - Collections.frequency(operations, curWord + OUT)== 1) {//more ins than out
+            if (Collections.frequency(operations, curWord + IN) - Collections.frequency(operations, curWord + OUT)
+                == 1) {//more ins than out
                 operations.add(curWord + OUT);
             } else {
                 operations.add(curWord + IN);
@@ -106,7 +107,6 @@ public class graycodesarefun {
             }
             inPhoto.add(i, str);
         }
-
         return inPhoto;
     }
 
@@ -120,16 +120,16 @@ public class graycodesarefun {
 
         final String SEP = " | ";
         StringBuilder table = new StringBuilder();
-        table.append("Number").append(SEP).append("Code").append(SEP).append("Children in photo").append(SEP).append(
-            "Action\n");
+        table.append("Number").append(SEP).append("Code").append(SEP).append("Children in photo").append(SEP)
+            .append("Action\n");
         for (int i = 0; i < 31; i++) {//15 names
             int temp = i;
-            table.append(++temp).append(SEP).append(codes.get(temp)).append(SEP).append(inPhoto.get(temp)).append(SEP).append(action.get(i));
+            table.append(++temp).append(SEP).append(codes.get(temp)).append(SEP).append(inPhoto.get(temp)).append(SEP)
+                .append(action.get(i));
             table.append("\n");
         }
         return table.toString();
-//        return "";
     }
-    //we have seen this in binary trees. the ABACABA fractal pattern is recursive, so it would be trivial to add Eve,
-    // felix etc by simply adding one more bit length and adding one more switch case to account for that.
+    //we have seen this in binary trees. the ABACABA fractal pattern is recursive.It would be trivial to add extra
+    // orders for pictures, you would just have to create the new names and add them to the program
 }
